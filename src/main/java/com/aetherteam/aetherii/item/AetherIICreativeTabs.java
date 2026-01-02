@@ -30,12 +30,12 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 public class AetherIICreativeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, AetherII.MODID);
 
-    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> AETHER_II_BUILDING_BLOCKS = CREATIVE_MODE_TABS.register("building_blocks", () -> CreativeModeTab.builder()
-            .withTabsBefore(CreativeModeTabs.SPAWN_EGGS)
-            .withTabsAfter(ResourceLocation.fromNamespaceAndPath(AetherII.MODID, "colored_blocks"))
-            .icon(() -> new ItemStack(AetherIIBlocks.HOLYSTONE_BRICKS.get()))
-            .title(Component.translatable("itemGroup." + AetherII.MODID + ".building_blocks"))
+    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> THE_AETHER_II = CREATIVE_MODE_TABS.register("the_aether_ii", () -> CreativeModeTab.builder()
+            .withTabsBefore(ResourceLocation.fromNamespaceAndPath(AetherII.MODID, "ingredients"))
+            .icon(() -> new ItemStack(AetherIIItems.AETHER_PORTAL_FRAME.get()))
+            .title(Component.translatable("itemGroup." + AetherII.MODID + ".the_aether_ii"))
             .displayItems((features, output) -> {
+
                 output.accept(AetherIIBlocks.SKYROOT_LOG.get());
                 output.accept(AetherIIBlocks.SKYROOT_WOOD.get());
                 output.accept(AetherIIBlocks.SKYROOT_TRUNK.get());
@@ -258,14 +258,6 @@ public class AetherIICreativeTabs {
                 output.accept(AetherIIBlocks.GRAVITITE_BLOCK.get());
                 output.accept(AetherIIBlocks.CORROBONITE_BLOCK.get());
 
-            }).build());
-
-    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> AETHER_II_COLORED_BLOCKS = CREATIVE_MODE_TABS.register("colored_blocks", () -> CreativeModeTab.builder()
-            .withTabsBefore(ResourceLocation.fromNamespaceAndPath(AetherII.MODID, "building_blocks"))
-            .withTabsAfter(ResourceLocation.fromNamespaceAndPath(AetherII.MODID, "natural_blocks"))
-            .icon(() -> new ItemStack(AetherIIBlocks.CYAN_CLOUDWOOL.get()))
-            .title(Component.translatable("itemGroup." + AetherII.MODID + ".colored_blocks"))
-            .displayItems((features, output) -> {
                 output.accept(AetherIIBlocks.CLOUDWOOL.get());
                 output.accept(AetherIIBlocks.WHITE_CLOUDWOOL.get());
                 output.accept(AetherIIBlocks.LIGHT_GRAY_CLOUDWOOL.get());
@@ -316,14 +308,7 @@ public class AetherIICreativeTabs {
                 output.accept(AetherIIBlocks.PURPLE_ARILUM_LANTERN.get());
                 output.accept(AetherIIBlocks.MAGENTA_ARILUM_LANTERN.get());
                 output.accept(AetherIIBlocks.PINK_ARILUM_LANTERN.get());
-            }).build());
 
-    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> AETHER_II_NATURAL_BLOCKS = CREATIVE_MODE_TABS.register("natural_blocks", () -> CreativeModeTab.builder()
-            .withTabsBefore(ResourceLocation.fromNamespaceAndPath(AetherII.MODID, "colored_blocks"))
-            .withTabsAfter(ResourceLocation.fromNamespaceAndPath(AetherII.MODID, "functional_blocks"))
-            .icon(() -> new ItemStack(AetherIIBlocks.AETHER_GRASS_BLOCK.get()))
-            .title(Component.translatable("itemGroup." + AetherII.MODID + ".natural_blocks"))
-            .displayItems((features, output) -> {
                 output.accept(AetherIIBlocks.AETHER_GRASS_BLOCK.get());
                 output.accept(AetherIIBlocks.ENCHANTED_AETHER_GRASS_BLOCK.get());
                 output.accept(AetherIIBlocks.AETHER_DIRT_PATH.get());
@@ -482,14 +467,7 @@ public class AetherIICreativeTabs {
                 output.accept(AetherIIBlocks.MEDIUM_ARCTIC_ICE_CRYSTAL.get());
                 output.accept(AetherIIBlocks.LARGE_ARCTIC_ICE_CRYSTAL.get());
                 output.accept(AetherIIBlocks.MOA_EGG.get());
-            }).build());
 
-    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> AETHER_II_FUNCTIONAL_BLOCKS = CREATIVE_MODE_TABS.register("functional_blocks", () -> CreativeModeTab.builder()
-            .withTabsBefore(ResourceLocation.fromNamespaceAndPath(AetherII.MODID, "natural_blocks"))
-            .withTabsAfter(ResourceLocation.fromNamespaceAndPath(AetherII.MODID, "dungeon_blocks"))
-            .icon(() -> new ItemStack(AetherIIBlocks.ARTISANS_BENCH.get()))
-            .title(Component.translatable("itemGroup." + AetherII.MODID + ".functional_blocks"))
-            .displayItems((features, output) -> {
                 output.accept(AetherIIBlocks.AMBROSIUM_TORCH.get());
                 output.accept(AetherIIBlocks.ARKENIUM_LANTERN.get());
                 output.accept(AetherIIBlocks.RUSTIC_ARKENIUM_LANTERN.get());
@@ -517,79 +495,7 @@ public class AetherIICreativeTabs {
                 output.accept(AetherIIBlocks.UNSTABLE_HOLYSTONE.get());
                 output.accept(AetherIIBlocks.UNSTABLE_UNDERSHALE.get());
                 output.accept(AetherIIItems.AETHER_PORTAL_FRAME.get());
-            }).build());
 
-    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> AETHER_II_DUNGEON_BLOCKS = CREATIVE_MODE_TABS.register("dungeon_blocks", () -> CreativeModeTab.builder()
-            .withTabsBefore(ResourceLocation.fromNamespaceAndPath(AetherII.MODID, "functional_blocks"))
-            .withTabsAfter(ResourceLocation.fromNamespaceAndPath(AetherII.MODID, "equipment_and_utilities"))
-            .icon(() -> new ItemStack(AetherIIBlocks.GUARDIAN_LAMP.get()))
-            .title(Component.translatable("itemGroup." + AetherII.MODID + ".dungeon_blocks"))
-            .displayItems((features, output) -> {
-                output.accept(AetherIIBlocks.GUARDIAN_LOG.get());
-                output.accept(AetherIIBlocks.GUARDIAN_LOG_SLAB.get());
-                output.accept(AetherIIBlocks.GUARDIAN_WOOD.get());
-                output.accept(AetherIIBlocks.GUARDIAN_WOOD_SLAB.get());
-                output.accept(AetherIIBlocks.GUARDIAN_TRUNK.get());
-                output.accept(AetherIIBlocks.STRIPPED_GUARDIAN_LOG.get());
-                output.accept(AetherIIBlocks.STRIPPED_GUARDIAN_LOG_SLAB.get());
-                output.accept(AetherIIBlocks.STRIPPED_GUARDIAN_WOOD.get());
-                output.accept(AetherIIBlocks.STRIPPED_GUARDIAN_WOOD_SLAB.get());
-                output.accept(AetherIIBlocks.STRIPPED_GUARDIAN_TRUNK.get());
-                output.accept(AetherIIBlocks.DENSE_GUARDIAN_LOG.get());
-                output.accept(AetherIIBlocks.DENSE_GUARDIAN_LOG_SLAB.get());
-                output.accept(AetherIIBlocks.DENSE_GUARDIAN_WOOD.get());
-                output.accept(AetherIIBlocks.DENSE_GUARDIAN_WOOD_SLAB.get());
-                output.accept(AetherIIBlocks.DENSE_STRIPPED_GUARDIAN_LOG.get());
-                output.accept(AetherIIBlocks.DENSE_STRIPPED_GUARDIAN_LOG_SLAB.get());
-                output.accept(AetherIIBlocks.DENSE_STRIPPED_GUARDIAN_WOOD.get());
-                output.accept(AetherIIBlocks.DENSE_STRIPPED_GUARDIAN_WOOD_SLAB.get());
-                output.accept(AetherIIBlocks.INFECTED_LOG.get());
-                output.accept(AetherIIBlocks.INFECTED_LOG_SLAB.get());
-                output.accept(AetherIIBlocks.INFECTED_WOOD.get());
-                output.accept(AetherIIBlocks.INFECTED_WOOD_SLAB.get());
-                output.accept(AetherIIBlocks.INFECTED_TRUNK.get());
-                output.accept(AetherIIBlocks.STRIPPED_INFECTED_LOG.get());
-                output.accept(AetherIIBlocks.STRIPPED_INFECTED_LOG_SLAB.get());
-                output.accept(AetherIIBlocks.STRIPPED_INFECTED_WOOD.get());
-                output.accept(AetherIIBlocks.STRIPPED_INFECTED_WOOD_SLAB.get());
-                output.accept(AetherIIBlocks.STRIPPED_INFECTED_TRUNK.get());
-                output.accept(AetherIIBlocks.DENSE_INFECTED_LOG.get());
-                output.accept(AetherIIBlocks.DENSE_INFECTED_LOG_SLAB.get());
-                output.accept(AetherIIBlocks.DENSE_INFECTED_WOOD.get());
-                output.accept(AetherIIBlocks.DENSE_INFECTED_WOOD_SLAB.get());
-                output.accept(AetherIIBlocks.DENSE_STRIPPED_INFECTED_LOG.get());
-                output.accept(AetherIIBlocks.DENSE_STRIPPED_INFECTED_LOG_SLAB.get());
-                output.accept(AetherIIBlocks.DENSE_STRIPPED_INFECTED_WOOD.get());
-                output.accept(AetherIIBlocks.DENSE_STRIPPED_INFECTED_WOOD_SLAB.get());
-                output.accept(AetherIIBlocks.GUARDIAN_ROOTS.get());
-                output.accept(AetherIIBlocks.DENSE_GUARDIAN_ROOTS.get());
-                output.accept(AetherIIBlocks.UNSTABLE_GUARDIAN_ROOTS.get());
-                output.accept(AetherIIBlocks.LUCENT_GUARDIAN_ROOTS.get());
-                output.accept(AetherIIBlocks.GUARDIAN_LAMP.get());
-                output.accept(AetherIIBlocks.UNDERGROWTH_LEAVES.get());
-                output.accept(AetherIIBlocks.DENSE_UNDERGROWTH_LEAVES.get());
-                output.accept(AetherIIBlocks.UNDERGROWTH_VINES.get());
-                output.accept(AetherIIBlocks.HANGING_UNDERGROWTH.get());
-                output.accept(AetherIIBlocks.ROTSHROOM_BLOCK.get());
-                output.accept(AetherIIBlocks.ROTSHROOM_SLAB.get());
-                output.accept(AetherIIBlocks.DENSE_ROTSHROOM_BLOCK.get());
-                output.accept(AetherIIBlocks.DENSE_ROTSHROOM_SLAB.get());
-                output.accept(AetherIIBlocks.ROTSHROOM_STEM.get());
-                output.accept(AetherIIBlocks.DENSE_ROTSHROOM_STEM.get());
-                output.accept(AetherIIBlocks.SHELF_ROTSHROOM_SLAB.get());
-                output.accept(AetherIIBlocks.ROTSHROOM.get());
-                output.accept(AetherIIBlocks.ROTSHROOM_CLUSTER.get());
-                output.accept(AetherIIBlocks.ROTSHROOM_TOADSTOOL.get());
-                output.accept(AetherIIBlocks.SHELF_ROTSHROOM.get());
-                output.accept(AetherIIBlocks.ROTGROWTH_VINES.get());
-            }).build());
-
-    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> AETHER_II_EQUIPMENT_AND_UTILITIES = CREATIVE_MODE_TABS.register("equipment_and_utilities", () -> CreativeModeTab.builder()
-            .withTabsBefore(ResourceLocation.fromNamespaceAndPath(AetherII.MODID, "dungeon_blocks"))
-            .withTabsAfter(ResourceLocation.fromNamespaceAndPath(AetherII.MODID, "armor_and_accessories"))
-            .icon(() -> new ItemStack(AetherIIItems.GRAVITITE_PICKAXE.get()))
-            .title(Component.translatable("itemGroup." + AetherII.MODID + ".equipment_and_utilities"))
-            .displayItems((features, output) -> {
                 output.accept(AetherIIItems.SKYROOT_SHORTSWORD.get());
                 output.accept(AetherIIItems.SKYROOT_HAMMER.get());
                 output.accept(AetherIIItems.SKYROOT_SPEAR.get());
@@ -676,14 +582,7 @@ public class AetherIICreativeTabs {
                 output.accept(AetherIIItems.RECORDING_892.get());
                 output.accept(AetherIIItems.GLINT_COIN.get());
                 output.accept(AetherIIItems.GUIDEBOOK_PAGE.get());
-            }).build());
 
-    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> AETHER_II_ARMOR_AND_ACCESSORIES = CREATIVE_MODE_TABS.register("armor_and_accessories", () -> CreativeModeTab.builder()
-            .withTabsBefore(ResourceLocation.fromNamespaceAndPath(AetherII.MODID, "equipment_and_utilities"))
-            .withTabsAfter(ResourceLocation.fromNamespaceAndPath(AetherII.MODID, "consumables"))
-            .icon(() -> new ItemStack(AetherIIItems.GRAVITITE_HELMET.get()))
-            .title(Component.translatable("itemGroup." + AetherII.MODID + ".armor_and_accessories"))
-            .displayItems((features, output) -> {
                 output.accept(AetherIIItems.BEAST_PELT_HELMET.get());
                 output.accept(AetherIIItems.BEAST_PELT_CHESTPLATE.get());
                 output.accept(AetherIIItems.BEAST_PELT_LEGGINGS.get());
@@ -718,14 +617,7 @@ public class AetherIICreativeTabs {
                 output.accept(AetherIIItems.CHARM_OF_TOUGHNESS.get());
                 output.accept(AetherIIItems.CHARM_OF_RESISTANCE.get());
                 output.accept(AetherIIItems.CHARM_OF_AGILITY.get());
-            }).build());
 
-    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> AETHER_II_CONSUMABLES = CREATIVE_MODE_TABS.register("consumables", () -> CreativeModeTab.builder()
-            .withTabsBefore(ResourceLocation.fromNamespaceAndPath(AetherII.MODID, "combat"))
-            .withTabsAfter(ResourceLocation.fromNamespaceAndPath(AetherII.MODID, "ingredients"))
-            .icon(() -> new ItemStack(AetherIIItems.ORANGE.get()))
-            .title(Component.translatable("itemGroup." + AetherII.MODID + ".consumables"))
-            .displayItems((features, output) -> {
                 output.accept(AetherIIItems.BLUEBERRY.get());
                 output.accept(AetherIIItems.ENCHANTED_BLUEBERRY.get());
                 output.accept(AetherIIItems.ORANGE.get());
@@ -749,14 +641,7 @@ public class AetherIICreativeTabs {
                 output.accept(AetherIIItems.ANTIVENOM_VIAL.get());
                 output.accept(AetherIIItems.VALKYRIE_TEA.get());
                 output.accept(AetherIIItems.HEALING_STONE.get());
-            }).build());
 
-    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> AETHER_II_INGREDIENTS = CREATIVE_MODE_TABS.register("ingredients", () -> CreativeModeTab.builder()
-            .withTabsBefore(ResourceLocation.fromNamespaceAndPath(AetherII.MODID, "consumables"))
-            .withTabsAfter(ResourceLocation.fromNamespaceAndPath(AetherII.MODID, "spawn_eggs"))
-            .icon(() -> new ItemStack(AetherIIItems.INERT_ARKENIUM.get()))
-            .title(Component.translatable("itemGroup." + AetherII.MODID + ".ingredients"))
-            .displayItems((features, output) -> {
                 output.accept(AetherIIItems.AMBROSIUM_SHARD.get());
                 output.accept(AetherIIItems.ZANITE_GEMSTONE.get());
                 output.accept(AetherIIItems.INERT_ARKENIUM.get());
@@ -790,13 +675,7 @@ public class AetherIICreativeTabs {
                 output.accept(AetherIIItems.CHARGE_CATALYST.get());
                 output.accept(AetherIIItems.ARKENIUM_CORE.get());
                 output.accept(AetherIIItems.GRAVITITE_CORE.get());
-            }).build());
 
-    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> AETHER_II_SPAWN_EGGS = CREATIVE_MODE_TABS.register("spawn_eggs", () -> CreativeModeTab.builder()
-            .withTabsBefore(ResourceLocation.fromNamespaceAndPath(AetherII.MODID, "ingredients"))
-            .icon(() -> new ItemStack(AetherIIItems.AERBUNNY_SPAWN_EGG.get()))
-            .title(Component.translatable("itemGroup." + AetherII.MODID + ".spawn_eggs"))
-            .displayItems((features, output) -> {
                 output.accept(AetherIIItems.AECHOR_PLANT_SPAWN_EGG.get());
                 output.accept(AetherIIItems.AERBUNNY_SPAWN_EGG.get());
                 output.accept(AetherIIItems.AERWHALE_SPAWN_EGG.get());
@@ -824,6 +703,154 @@ public class AetherIICreativeTabs {
                 output.accept(AetherIIItems.TEMPEST_SPAWN_EGG.get());
                 output.accept(AetherIIItems.ZEPHYR_SPAWN_EGG.get());
             }).build());
+
+    /*
+    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> AETHER_II_BUILDING_BLOCKS = CREATIVE_MODE_TABS.register("building_blocks", () -> CreativeModeTab.builder()
+            .withTabsBefore(CreativeModeTabs.SPAWN_EGGS)
+            .withTabsAfter(ResourceLocation.fromNamespaceAndPath(AetherII.MODID, "colored_blocks"))
+            .icon(() -> new ItemStack(AetherIIBlocks.HOLYSTONE_BRICKS.get()))
+            .title(Component.translatable("itemGroup." + AetherII.MODID + ".building_blocks"))
+            .displayItems((features, output) -> {
+
+            }).build());
+
+    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> AETHER_II_COLORED_BLOCKS = CREATIVE_MODE_TABS.register("colored_blocks", () -> CreativeModeTab.builder()
+            .withTabsBefore(ResourceLocation.fromNamespaceAndPath(AetherII.MODID, "building_blocks"))
+            .withTabsAfter(ResourceLocation.fromNamespaceAndPath(AetherII.MODID, "natural_blocks"))
+            .icon(() -> new ItemStack(AetherIIBlocks.CYAN_CLOUDWOOL.get()))
+            .title(Component.translatable("itemGroup." + AetherII.MODID + ".colored_blocks"))
+            .displayItems((features, output) -> {
+
+            }).build());
+
+    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> AETHER_II_NATURAL_BLOCKS = CREATIVE_MODE_TABS.register("natural_blocks", () -> CreativeModeTab.builder()
+            .withTabsBefore(ResourceLocation.fromNamespaceAndPath(AetherII.MODID, "colored_blocks"))
+            .withTabsAfter(ResourceLocation.fromNamespaceAndPath(AetherII.MODID, "functional_blocks"))
+            .icon(() -> new ItemStack(AetherIIBlocks.AETHER_GRASS_BLOCK.get()))
+            .title(Component.translatable("itemGroup." + AetherII.MODID + ".natural_blocks"))
+            .displayItems((features, output) -> {
+
+            }).build());
+
+    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> AETHER_II_FUNCTIONAL_BLOCKS = CREATIVE_MODE_TABS.register("functional_blocks", () -> CreativeModeTab.builder()
+            .withTabsBefore(ResourceLocation.fromNamespaceAndPath(AetherII.MODID, "natural_blocks"))
+            .withTabsAfter(ResourceLocation.fromNamespaceAndPath(AetherII.MODID, "dungeon_blocks"))
+            .icon(() -> new ItemStack(AetherIIBlocks.ARTISANS_BENCH.get()))
+            .title(Component.translatable("itemGroup." + AetherII.MODID + ".functional_blocks"))
+            .displayItems((features, output) -> {
+
+            }).build());
+
+    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> AETHER_II_DUNGEON_BLOCKS = CREATIVE_MODE_TABS.register("dungeon_blocks", () -> CreativeModeTab.builder()
+            .withTabsBefore(ResourceLocation.fromNamespaceAndPath(AetherII.MODID, "functional_blocks"))
+            .withTabsAfter(ResourceLocation.fromNamespaceAndPath(AetherII.MODID, "equipment_and_utilities"))
+            .icon(() -> new ItemStack(AetherIIBlocks.GUARDIAN_LAMP.get()))
+            .title(Component.translatable("itemGroup." + AetherII.MODID + ".dungeon_blocks"))
+            .displayItems((features, output) -> {
+                output.accept(AetherIIBlocks.GUARDIAN_LOG.get());
+                output.accept(AetherIIBlocks.GUARDIAN_LOG_SLAB.get());
+                output.accept(AetherIIBlocks.GUARDIAN_WOOD.get());
+                output.accept(AetherIIBlocks.GUARDIAN_WOOD_SLAB.get());
+                output.accept(AetherIIBlocks.GUARDIAN_TRUNK.get());
+                output.accept(AetherIIBlocks.STRIPPED_GUARDIAN_LOG.get());
+                output.accept(AetherIIBlocks.STRIPPED_GUARDIAN_LOG_SLAB.get());
+                output.accept(AetherIIBlocks.STRIPPED_GUARDIAN_WOOD.get());
+                output.accept(AetherIIBlocks.STRIPPED_GUARDIAN_WOOD_SLAB.get());
+                output.accept(AetherIIBlocks.STRIPPED_GUARDIAN_TRUNK.get());
+                output.accept(AetherIIBlocks.DENSE_GUARDIAN_LOG.get());
+                output.accept(AetherIIBlocks.DENSE_GUARDIAN_LOG_SLAB.get());
+                output.accept(AetherIIBlocks.DENSE_GUARDIAN_WOOD.get());
+                output.accept(AetherIIBlocks.DENSE_GUARDIAN_WOOD_SLAB.get());
+                output.accept(AetherIIBlocks.DENSE_STRIPPED_GUARDIAN_LOG.get());
+                output.accept(AetherIIBlocks.DENSE_STRIPPED_GUARDIAN_LOG_SLAB.get());
+                output.accept(AetherIIBlocks.DENSE_STRIPPED_GUARDIAN_WOOD.get());
+                output.accept(AetherIIBlocks.DENSE_STRIPPED_GUARDIAN_WOOD_SLAB.get());
+                output.accept(AetherIIBlocks.INFECTED_LOG.get());
+                output.accept(AetherIIBlocks.INFECTED_LOG_SLAB.get());
+                output.accept(AetherIIBlocks.INFECTED_WOOD.get());
+                output.accept(AetherIIBlocks.INFECTED_WOOD_SLAB.get());
+                output.accept(AetherIIBlocks.INFECTED_TRUNK.get());
+                output.accept(AetherIIBlocks.STRIPPED_INFECTED_LOG.get());
+                output.accept(AetherIIBlocks.STRIPPED_INFECTED_LOG_SLAB.get());
+                output.accept(AetherIIBlocks.STRIPPED_INFECTED_WOOD.get());
+                output.accept(AetherIIBlocks.STRIPPED_INFECTED_WOOD_SLAB.get());
+                output.accept(AetherIIBlocks.STRIPPED_INFECTED_TRUNK.get());
+                output.accept(AetherIIBlocks.DENSE_INFECTED_LOG.get());
+                output.accept(AetherIIBlocks.DENSE_INFECTED_LOG_SLAB.get());
+                output.accept(AetherIIBlocks.DENSE_INFECTED_WOOD.get());
+                output.accept(AetherIIBlocks.DENSE_INFECTED_WOOD_SLAB.get());
+                output.accept(AetherIIBlocks.DENSE_STRIPPED_INFECTED_LOG.get());
+                output.accept(AetherIIBlocks.DENSE_STRIPPED_INFECTED_LOG_SLAB.get());
+                output.accept(AetherIIBlocks.DENSE_STRIPPED_INFECTED_WOOD.get());
+                output.accept(AetherIIBlocks.DENSE_STRIPPED_INFECTED_WOOD_SLAB.get());
+                output.accept(AetherIIBlocks.GUARDIAN_ROOTS.get());
+                output.accept(AetherIIBlocks.DENSE_GUARDIAN_ROOTS.get());
+                output.accept(AetherIIBlocks.UNSTABLE_GUARDIAN_ROOTS.get());
+                output.accept(AetherIIBlocks.LUCENT_GUARDIAN_ROOTS.get());
+                output.accept(AetherIIBlocks.GUARDIAN_LAMP.get());
+                output.accept(AetherIIBlocks.UNDERGROWTH_LEAVES.get());
+                output.accept(AetherIIBlocks.DENSE_UNDERGROWTH_LEAVES.get());
+                output.accept(AetherIIBlocks.UNDERGROWTH_VINES.get());
+                output.accept(AetherIIBlocks.HANGING_UNDERGROWTH.get());
+                output.accept(AetherIIBlocks.ROTSHROOM_BLOCK.get());
+                output.accept(AetherIIBlocks.ROTSHROOM_SLAB.get());
+                output.accept(AetherIIBlocks.DENSE_ROTSHROOM_BLOCK.get());
+                output.accept(AetherIIBlocks.DENSE_ROTSHROOM_SLAB.get());
+                output.accept(AetherIIBlocks.ROTSHROOM_STEM.get());
+                output.accept(AetherIIBlocks.DENSE_ROTSHROOM_STEM.get());
+                output.accept(AetherIIBlocks.SHELF_ROTSHROOM_SLAB.get());
+                output.accept(AetherIIBlocks.ROTSHROOM.get());
+                output.accept(AetherIIBlocks.ROTSHROOM_CLUSTER.get());
+                output.accept(AetherIIBlocks.ROTSHROOM_TOADSTOOL.get());
+                output.accept(AetherIIBlocks.SHELF_ROTSHROOM.get());
+                output.accept(AetherIIBlocks.ROTGROWTH_VINES.get());
+            }).build());
+
+    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> AETHER_II_EQUIPMENT_AND_UTILITIES = CREATIVE_MODE_TABS.register("equipment_and_utilities", () -> CreativeModeTab.builder()
+            .withTabsBefore(ResourceLocation.fromNamespaceAndPath(AetherII.MODID, "dungeon_blocks"))
+            .withTabsAfter(ResourceLocation.fromNamespaceAndPath(AetherII.MODID, "armor_and_accessories"))
+            .icon(() -> new ItemStack(AetherIIItems.GRAVITITE_PICKAXE.get()))
+            .title(Component.translatable("itemGroup." + AetherII.MODID + ".equipment_and_utilities"))
+            .displayItems((features, output) -> {
+
+            }).build());
+
+    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> AETHER_II_ARMOR_AND_ACCESSORIES = CREATIVE_MODE_TABS.register("armor_and_accessories", () -> CreativeModeTab.builder()
+            .withTabsBefore(ResourceLocation.fromNamespaceAndPath(AetherII.MODID, "equipment_and_utilities"))
+            .withTabsAfter(ResourceLocation.fromNamespaceAndPath(AetherII.MODID, "consumables"))
+            .icon(() -> new ItemStack(AetherIIItems.GRAVITITE_HELMET.get()))
+            .title(Component.translatable("itemGroup." + AetherII.MODID + ".armor_and_accessories"))
+            .displayItems((features, output) -> {
+
+            }).build());
+
+    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> AETHER_II_CONSUMABLES = CREATIVE_MODE_TABS.register("consumables", () -> CreativeModeTab.builder()
+            .withTabsBefore(ResourceLocation.fromNamespaceAndPath(AetherII.MODID, "combat"))
+            .withTabsAfter(ResourceLocation.fromNamespaceAndPath(AetherII.MODID, "ingredients"))
+            .icon(() -> new ItemStack(AetherIIItems.ORANGE.get()))
+            .title(Component.translatable("itemGroup." + AetherII.MODID + ".consumables"))
+            .displayItems((features, output) -> {
+
+            }).build());
+
+    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> AETHER_II_INGREDIENTS = CREATIVE_MODE_TABS.register("ingredients", () -> CreativeModeTab.builder()
+            .withTabsBefore(ResourceLocation.fromNamespaceAndPath(AetherII.MODID, "consumables"))
+            .withTabsAfter(ResourceLocation.fromNamespaceAndPath(AetherII.MODID, "spawn_eggs"))
+            .icon(() -> new ItemStack(AetherIIItems.INERT_ARKENIUM.get()))
+            .title(Component.translatable("itemGroup." + AetherII.MODID + ".ingredients"))
+            .displayItems((features, output) -> {
+
+            }).build());
+
+    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> AETHER_II_SPAWN_EGGS = CREATIVE_MODE_TABS.register("spawn_eggs", () -> CreativeModeTab.builder()
+            .withTabsBefore(ResourceLocation.fromNamespaceAndPath(AetherII.MODID, "ingredients"))
+            .icon(() -> new ItemStack(AetherIIItems.AERBUNNY_SPAWN_EGG.get()))
+            .title(Component.translatable("itemGroup." + AetherII.MODID + ".spawn_eggs"))
+            .displayItems((features, output) -> {
+
+            }).build());
+
+     */
 
     public static ItemStack getMoaBook() {
         final String selector = "entity @e[type=" + AetherIIEntities.MOA.location() + ",limit=1,sort=nearest] ";

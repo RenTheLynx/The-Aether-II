@@ -103,7 +103,7 @@ public class TempestThunderball extends AbstractHurtingProjectile {
         electricCircle.setRadius(2.5F);
         electricCircle.setRadiusOnUse(-0.5F);
         electricCircle.setWaitTime(10);
-        electricCircle.setDuration(50);
+        electricCircle.setDuration(80);
 
         electricCircle.addEffect(new MobEffectInstance(AetherIIEffects.ELECTRIC_SHOCK, 1, 0, false, false, false));
         electricCircle.addEffect(new MobEffectInstance(MobEffects.SLOWNESS, 10, 1, false, false, false));
@@ -122,7 +122,7 @@ public class TempestThunderball extends AbstractHurtingProjectile {
                     if (this.getOwner() instanceof LivingEntity livingOwner) {
                         livingEntity.hurtServer(serverLevel, AetherIIDamageTypes.indirectEntityDamageSource(livingEntity.level(), AetherIIDamageTypes.SHOCK, this, livingOwner), 3.0F);
                     } else {
-                        livingEntity.hurtServer(serverLevel, AetherIIDamageTypes.damageSource(livingEntity.level(), AetherIIDamageTypes.SHOCK), 3.0F);
+                        livingEntity.hurtServer(serverLevel, AetherIIDamageTypes.damageSource(livingEntity.level(), AetherIIDamageTypes.SHOCK), 5.0F);
                     }
                 }
             }
